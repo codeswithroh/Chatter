@@ -63,26 +63,21 @@ export function Chat({ currentUser, onLogout }) {
         </button>
       </div>
       <div className="chat-message-list">
-        {messages.map(
-          (message, idx) => (
-            console.log(message),
-            (
-              <div
-                key={idx}
-                className={`chat-message ${
-                  currentUser === message.author ? "outgoing" : ""
-                }`}
-              >
-                <div className="chat-message-wrapper">
-                  <span className="chat-message-author">{message.author}</span>
-                  <div className="chat-message-bubble">
-                    <span className="chat-message-body">{message.body}</span>
-                  </div>
-                </div>
+        {messages.map((message, idx) => (
+          <div
+            key={idx}
+            className={`chat-message ${
+              currentUser === message.author ? "outgoing" : ""
+            }`}
+          >
+            <div className="chat-message-wrapper">
+              <span className="chat-message-author">{message.author}</span>
+              <div className="chat-message-bubble">
+                <span className="chat-message-body">{message.body}</span>
               </div>
-            )
-          )
-        )}
+            </div>
+          </div>
+        ))}
       </div>
       <div className="chat-composer">
         <input
